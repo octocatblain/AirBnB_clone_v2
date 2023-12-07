@@ -51,7 +51,14 @@ file { '/data/web_static/shared':
 
 file { '/data/web_static/releases/test/index.html':
   ensure  => 'present',
-  content => "Holberton School Puppet\n"
+  content => '<html>
+  <head>
+  </head>
+  <body>
+        Holberton School
+  </body>
+</html>
+'
 } ->
 
 file { '/data/web_static/current':
@@ -78,7 +85,7 @@ file { '/var/www/html/index.html':
 
 file { '/var/www/html/404.html':
   ensure  => 'present',
-  content => "Ceci n'est pas une page\n"
+  content => "This is not a page\n"
 } ->
 
 file { '/etc/nginx/sites-available/default':
